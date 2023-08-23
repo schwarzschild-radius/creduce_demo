@@ -1,0 +1,5 @@
+#!/usr/bin/bash
+
+trap 'echo "segmentation_fault"' SIGSEGV
+
+$CLANG "-cc1" "-triple" "x86_64-w64-windows-gnu" "-emit-obj" "-mrelax-all" "-disable-free" "-clear-ast-before-backend" "-disable-llvm-verifier" "-discard-value-names" "-main-file-name" "multi-return.cpp" "-mrelocation-model" "pic" "-pic-level" "2" "-mframe-pointer=none" "-fmath-errno" "-ffp-contract=on" "-fno-rounding-math" "-mconstructor-aliases" "-mms-bitfields" "-funwind-tables=2" "-target-cpu" "x86-64" "-tune-cpu" "generic" "-mllvm" "-treat-scalable-fixed-error-as-warning" "-debugger-tuning=gdb" "-fcoverage-compilation-dir=C:/LapysDev/experiments/C++/Data" "-Wno-dollar-in-identifier-extension" "-Wno-keyword-macro" "-std=c++20" "-fdeprecated-macro" "-fdebug-compilation-dir=C:/LapysDev/experiments/C++/Data" "-ferror-limit" "19" "-fmessage-length=203" "-fno-use-cxa-atexit" "-fgnuc-version=4.2.1" "-fcxx-exceptions" "-fexceptions" "-exception-model=seh" "-fcolor-diagnostics" "-faddrsig" "-x" "c++" "multi_return.cpp" &> /dev/null

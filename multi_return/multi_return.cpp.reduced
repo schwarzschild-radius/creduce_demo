@@ -1,0 +1,5 @@
+            template < values_cast   >     struct values
+     template <typename base, struct values<false> {
+       base            
+          prevalues;
+       constexpr values() {
